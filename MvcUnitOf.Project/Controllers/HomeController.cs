@@ -22,7 +22,7 @@ namespace MvcUnitOf.Project.Controllers
         public ActionResult Index()
         {
 
-            //deneme git
+            
             List<Category> categories = _cat.listem();
 
             return View(categories);
