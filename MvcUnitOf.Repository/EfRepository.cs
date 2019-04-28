@@ -17,6 +17,7 @@ namespace MvcUnitOf.Repository.Repositories
 
         IQueryable<T> GetAll(Expression<Func<T, bool>> predicate);
 
+
         T GetByID(int id);
 
         T Get(Expression<Func<T, bool>> predicate);
@@ -58,7 +59,7 @@ namespace MvcUnitOf.Repository.Repositories
             if (entity.GetType().GetProperty("IsDeleted")!=null)
             {
                 T _entity = entity;
-                _entity.GetType().GetProperty("IsDeleted").SetValue(entity, true);
+                _entity.GetType().GetProperty("IsDeleted").SetValue(_entity, true);
                 this.Update(_entity);
             }
             else
